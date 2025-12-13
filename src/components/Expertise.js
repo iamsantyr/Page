@@ -4,27 +4,33 @@ const Expertise = () => {
   const expertiseItems = [
     {
       icon: '🧠',
-      title: 'Machine Learning',
+      title: 'Machine Learning Clásico',
       level: 95,
-      skills: ['Neural Networks', 'Deep Learning', 'Computer Vision', 'NLP']
+      skills: ['Random Forest', 'SVM', 'Clustering', 'Predictive Analytics']
     },
     {
-      icon: '⚙️',
-      title: 'Automation Systems',
-      level: 90,
-      skills: ['Workflow Automation', 'Process Optimization', 'RPA', 'CI/CD']
-    },
-    {
-      icon: '☁️',
-      title: 'Cloud Architecture',
-      level: 88,
-      skills: ['AWS', 'Azure', 'Kubernetes', 'Microservices']
-    },
-    {
-      icon: '🔬',
-      title: 'AI Research',
+      icon: '⚡',
+      title: 'Transformers',
       level: 92,
-      skills: ['LLMs', 'GPT Models', 'RAG Systems', 'Fine-tuning']
+      skills: ['Attention Mechanisms', 'BERT', 'GPT', 'Text Processing']
+    },
+    {
+      icon: '📝',
+      title: 'Análisis de Texto',
+      level: 90,
+      skills: ['Sentiment Analysis', 'Text Classification', 'NLP', 'Data Processing']
+    },
+    {
+      icon: '🤖',
+      title: 'LLM Integration',
+      level: 88,
+      skills: ['GPT Models', 'API Integration', 'Custom Prompts', 'Model Fine-tuning']
+    },
+    {
+      icon: '✨',
+      title: 'Generación de Texto',
+      level: 85,
+      skills: ['Content Creation', 'Automated Writing', 'Text Summarization', 'Creative AI']
     }
   ];
 
@@ -34,7 +40,7 @@ const Expertise = () => {
         <div className="section-header">
           <h2 className="section-title">Our Expertise</h2>
           <p className="section-subtitle">
-            Deep technical knowledge across AI, automation, and cloud technologies
+            Specialized expertise in machine learning, transformers, and AI text generation
           </p>
         </div>
         <div className="expertise-grid">

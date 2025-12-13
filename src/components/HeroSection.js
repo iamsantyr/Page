@@ -7,18 +7,18 @@ const HeroSection = () => {
         <div className="hero-text" data-aos="fade-right">
           <div className="hero-badge">
             <div className="pulse-ring"></div>
-            <span>AI & Automation Studio</span>
+            <span>DualCore</span>
           </div>
           
           <h1 className="hero-title">
-            <span className="title-line">Engineering the future of</span>
-            <span className="title-line gradient-text">intelligent automation</span>
+            <span className="title-line">Where ideas evolve into</span>
+            <span className="title-line gradient-text">intelligent products</span>
           </h1>
           
           <p className="hero-description">
-            We build sophisticated AI systems that transform complex challenges 
-            into elegant, scalable solutions. From neural networks to cloud-native 
-            architectures, we engineer the future of intelligent automation.
+            We transform innovative concepts into cutting-edge AI solutions. 
+            From intelligent automation to advanced machine learning systems, 
+            we bring your ideas to life with precision and expertise.
           </p>
           
           <div className="hero-actions">
@@ -33,16 +33,16 @@ const HeroSection = () => {
           
           <div className="hero-metrics">
             <div className="metric">
-              <div className="metric-value">50+</div>
+              <div className="metric-value">3+</div>
               <div className="metric-label">AI Models</div>
             </div>
             <div className="metric">
-              <div className="metric-value">2</div>
-              <div className="metric-label">Years</div>
+              <div className="metric-value">10+</div>
+              <div className="metric-label">Projects</div>
             </div>
             <div className="metric">
-              <div className="metric-value">100%</div>
-              <div className="metric-label">Satisfaction</div>
+              <div className="metric-value">90%</div>
+              <div className="metric-label">Innovation</div>
             </div>
           </div>
         </div>

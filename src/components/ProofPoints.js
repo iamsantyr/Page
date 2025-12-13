@@ -3,24 +3,24 @@ import React from 'react';
 const ProofPoints = () => {
   const proofItems = [
     {
-      icon: '🚀',
-      title: 'Proven Track Record',
-      description: '50+ successful AI implementations across multiple industries'
+      icon: '🎯',
+      title: 'AI Specialization',
+      description: 'Expert focus on machine learning, transformers, and LLM integration'
     },
     {
       icon: '⚡',
-      title: 'Rapid Deployment',
-      description: 'From concept to production in 30 days average'
+      title: 'Rapid Development',
+      description: 'Efficient project delivery with agile methodologies and clean architecture'
     },
     {
-      icon: '🎯',
-      title: 'Precision Engineering',
-      description: '99.9% accuracy in our AI models and automation systems'
+      icon: '🔧',
+      title: 'Full-Stack Excellence',
+      description: 'Complete solution development from AI models to production deployment'
     },
     {
-      icon: '🌟',
-      title: 'Innovation First',
-      description: 'Cutting-edge solutions using latest AI frameworks'
+      icon: '📚',
+      title: 'Quality-Driven',
+      description: 'Comprehensive testing and documentation for reliable, maintainable solutions'
     }
   ];
 

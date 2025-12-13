@@ -3,18 +3,18 @@ import React from 'react';
 const Team = () => {
   const teamMembers = [
     {
-      name: 'Alex Chen',
-      role: 'Lead AI Engineer',
-      avatar: 'A',
-      background: 'Former ML researcher at Google with 8+ years in deep learning and neural architecture design. PhD in Computer Science from Stanford.',
-      expertise: ['Deep Learning', 'Neural Networks', 'PyTorch', 'Research']
+      name: 'Sergio',
+      role: 'AI & Backend Engineer',
+      avatar: 'S',
+      background: 'Specialized in machine learning, transformers, and LLM integration. Expert in backend development and infrastructure deployment using Docker and virtual machines.',
+      expertise: ['Machine Learning', 'Transformers', 'LLM Integration', 'Backend Development', 'Docker', 'Virtual Machines']
     },
     {
-      name: 'Maria Rodriguez',
-      role: 'Cloud Architect',
-      avatar: 'M',
-      background: 'AWS Certified Solutions Architect with expertise in building scalable AI infrastructure. Led cloud migrations for Fortune 500 companies.',
-      expertise: ['AWS', 'Kubernetes', 'Microservices', 'DevOps']
+      name: 'Santiago',
+      role: 'Frontend & Quality Engineer',
+      avatar: 'S',
+      background: 'Expert in frontend development, comprehensive testing methodologies, and technical documentation. Ensures optimal user experience and system reliability.',
+      expertise: ['Frontend Development', 'Testing', 'Documentation', 'Quality Assurance', 'User Experience']
     }
   ];
 
