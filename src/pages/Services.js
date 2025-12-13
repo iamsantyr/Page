@@ -1,6 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { pageVariants, pageTransition } from '../utils/animations';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
@@ -74,32 +72,15 @@ const Services = () => {
   ];
 
   return (
-    <motion.div
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={pageTransition}
-      className="services-page"
-    >
+    <div className="services-page page-transition">
       <div className="page-header">
         <div className="container">
-          <motion.h1 
-            className="page-title"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-          >
+          <h1 className="page-title">
             Our Services
-          </motion.h1>
-          <motion.p 
-            className="page-subtitle"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-          >
+          </h1>
+          <p className="page-subtitle">
             Comprehensive AI solutions tailored to your business needs
-          </motion.p>
+          </p>
         </div>
       </div>
 
@@ -107,12 +88,9 @@ const Services = () => {
         <div className="container">
           <div className="services-grid">
             {services.map((service, index) => (
-              <motion.div 
+              <div 
                 key={index}
                 className="service-card"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 * index }}
               >
                 <div className="service-icon">{service.icon}</div>
                 <h3>{service.title}</h3>
@@ -122,25 +100,20 @@ const Services = () => {
                     <li key={featureIndex}>{feature}</li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             ))}
           </div>
 
-          <motion.div 
-            className="services-cta"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-          >
+          <div className="services-cta">
             <h2>Ready to get started?</h2>
             <p>Let's discuss how AI can transform your business</p>
             <Link to="/contact" className="btn btn-primary btn-large">
               Start Your Project
             </Link>
-          </motion.div>
+          </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

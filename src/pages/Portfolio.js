@@ -1,6 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { pageVariants, pageTransition } from '../utils/animations';
 import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
@@ -9,7 +7,6 @@ const Portfolio = () => {
       title: 'E-Commerce AI Recommendation Engine',
       company: 'RetailCorp',
       description: 'Implemented a sophisticated recommendation system that increased sales by 35% and improved customer engagement.',
-      image: '/api/placeholder/400/250',
       technologies: ['Python', 'TensorFlow', 'AWS', 'React'],
       results: [
         '35% increase in sales',
@@ -23,7 +20,6 @@ const Portfolio = () => {
       title: 'Intelligent Document Processing',
       company: 'LegalTech Solutions',
       description: 'Automated document analysis and extraction system that reduced processing time by 80%.',
-      image: '/api/placeholder/400/250',
       technologies: ['PyTorch', 'OpenCV', 'FastAPI', 'Docker'],
       results: [
         '80% reduction in processing time',
@@ -37,7 +33,6 @@ const Portfolio = () => {
       title: 'AI-Powered Customer Support',
       company: 'TechSupport Inc',
       description: 'Intelligent chatbot system that handles 70% of customer inquiries automatically.',
-      image: '/api/placeholder/400/250',
       technologies: ['GPT-4', 'Azure OpenAI', 'Node.js', 'MongoDB'],
       results: [
         '70% automated query resolution',
@@ -51,7 +46,6 @@ const Portfolio = () => {
       title: 'Predictive Maintenance System',
       company: 'ManufacturingPlus',
       description: 'IoT-based predictive maintenance system that prevents equipment failures.',
-      image: '/api/placeholder/400/250',
       technologies: ['Python', 'scikit-learn', 'IoT', 'InfluxDB'],
       results: [
         '90% reduction in unplanned downtime',
@@ -65,7 +59,6 @@ const Portfolio = () => {
       title: 'Financial Fraud Detection',
       company: 'SecureBank',
       description: 'Real-time fraud detection system with 99.8% accuracy and minimal false positives.',
-      image: '/api/placeholder/400/250',
       technologies: ['Python', 'XGBoost', 'Apache Kafka', 'PostgreSQL'],
       results: [
         '99.8% detection accuracy',
@@ -79,7 +72,6 @@ const Portfolio = () => {
       title: 'Medical Image Analysis',
       company: 'HealthAI Diagnostics',
       description: 'AI system for automated medical image analysis and early disease detection.',
-      image: '/api/placeholder/400/250',
       technologies: ['PyTorch', 'DICOM', 'Flask', 'Docker'],
       results: [
         '95% diagnostic accuracy',
@@ -94,32 +86,15 @@ const Portfolio = () => {
   const categories = ['All', 'Machine Learning', 'Computer Vision', 'Natural Language Processing', 'IoT & ML'];
 
   return (
-    <motion.div
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={pageTransition}
-      className="portfolio-page"
-    >
+    <div className="portfolio-page page-transition">
       <div className="page-header">
         <div className="container">
-          <motion.h1 
-            className="page-title"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-          >
+          <h1 className="page-title">
             Our Portfolio
-          </motion.h1>
-          <motion.p 
-            className="page-subtitle"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-          >
+          </h1>
+          <p className="page-subtitle">
             Showcasing successful AI implementations across industries
-          </motion.p>
+          </p>
         </div>
       </div>
 
@@ -138,12 +113,9 @@ const Portfolio = () => {
 
           <div className="portfolio-grid">
             {projects.map((project, index) => (
-              <motion.div 
+              <div 
                 key={index}
                 className="portfolio-card"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 * index }}
               >
                 <div className="portfolio-image">
                   <div className="placeholder-image">
@@ -174,25 +146,20 @@ const Portfolio = () => {
                     ))}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
-          <motion.div 
-            className="portfolio-cta"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-          >
+          <div className="portfolio-cta">
             <h2>Ready to start your AI project?</h2>
             <p>Let's discuss how we can help transform your business</p>
             <Link to="/contact" className="btn btn-primary btn-large">
               Get Started
             </Link>
-          </motion.div>
+          </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

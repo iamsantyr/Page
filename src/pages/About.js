@@ -1,35 +1,16 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { pageVariants, pageTransition } from '../utils/animations';
 
 const About = () => {
   return (
-    <motion.div
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={pageTransition}
-      className="about-page"
-    >
+    <div className="about-page page-transition">
       <div className="page-header">
         <div className="container">
-          <motion.h1 
-            className="page-title"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-          >
+          <h1 className="page-title">
             About DualCore
-          </motion.h1>
-          <motion.p 
-            className="page-subtitle"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-          >
+          </h1>
+          <p className="page-subtitle">
             Pioneering the future of artificial intelligence
-          </motion.p>
+          </p>
         </div>
       </div>
 
@@ -82,7 +63,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

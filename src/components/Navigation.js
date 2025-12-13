@@ -1,25 +1,83 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const navItems = [
+    { path: '/', label: 'Home' },
+    { path: '/services', label: 'Services' },
+    { path: '/portfolio', label: 'Portfolio' },
+    { path: '/about', label: 'About' },
+    { path: '/contact', label: 'Contact' },
+  ];
+
+  const isActive = (path) => {
+    if (path === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(path);
+  };
+
   return (
     <nav className="navbar" id="navbar">
       <div className="nav-container">
-        <div className="nav-logo">
+        <Link to="/" className="nav-logo">
           <div className="logo-symbol">DC</div>
           <div className="logo-text">
             <span className="main-text">DualCore</span>
             <span className="sub-text">Intelligence Labs</span>
           </div>
-        </div>
+        </Link>
+
         <div className="nav-links">
-          <a href="#expertise" className="nav-link">Expertise</a>
-          <a href="#cases" className="nav-link">Case Studies</a>
-          <a href="#innovation" className="nav-link">Innovation</a>
-          <a href="#clients" className="nav-link">Clients</a>
-          <a href="#team" className="nav-link">Team</a>
-          <a href="#contact" className="nav-link cta-link">Get Started</a>
+          {navItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`nav-link ${isActive(item.path) ? 'active' : ''}`}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <Link to="/contact" className="nav-link cta-link">
+            Get Started
+          </Link>
         </div>
+
+        <button 
+          className="mobile-menu-btn"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="mobile-menu">
+          {navItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`mobile-nav-link ${isActive(item.path) ? 'active' : ''}`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <Link 
+            to="/contact" 
+            className="mobile-nav-link cta-link"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Get Started
+          </Link>
+        </div>
+      )}
     </nav>
   );
 };

@@ -1,10 +1,21 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
+  const handleViewProjects = () => {
+    navigate('/portfolio');
+  };
+
+  const handleLetsTalk = () => {
+    navigate('/contact');
+  };
+
   return (
     <section className="hero-section">
       <div className="hero-content">
-        <div className="hero-text" data-aos="fade-right">
+        <div className="hero-text">
           <div className="hero-badge">
             <div className="pulse-ring"></div>
             <span>DualCore</span>
@@ -22,13 +33,21 @@ const HeroSection = () => {
           </p>
           
           <div className="hero-actions">
-            <button className="btn btn-primary btn-large">
+            <button 
+              className="btn btn-primary btn-large"
+              onClick={handleViewProjects}
+            >
               <span>View Our Projects</span>
               <svg className="btn-icon" viewBox="0 0 24 24">
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
               </svg>
             </button>
-            <button className="btn btn-secondary btn-large">Let's Talk</button>
+            <button 
+              className="btn btn-secondary btn-large"
+              onClick={handleLetsTalk}
+            >
+              Let's Talk
+            </button>
           </div>
           
           <div className="hero-metrics">
@@ -47,7 +66,7 @@ const HeroSection = () => {
           </div>
         </div>
         
-        <div className="hero-visual" data-aos="fade-left">
+        <div className="hero-visual">
           <div className="neural-network-3d">
             <div className="neural-core">
               <div className="neural-node node-1"></div>

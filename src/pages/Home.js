@@ -1,6 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { pageVariants, pageTransition } from '../utils/animations';
 
 // Components
 import HeroSection from '../components/HeroSection';
@@ -14,13 +12,7 @@ import ContactPreview from '../components/ContactPreview';
 
 const Home = () => {
   return (
-    <motion.div
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={pageTransition}
-    >
+    <div className="page-transition">
       <HeroSection />
       <ProofPoints />
       <Expertise />
@@ -29,7 +21,7 @@ const Home = () => {
       <Clients />
       <Team />
       <ContactPreview />
-    </motion.div>
+    </div>
   );
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CaseStudies = () => {
   const caseStudies = [
@@ -60,7 +61,7 @@ const CaseStudies = () => {
         </div>
         <div className="cases-grid">
           {caseStudies.map((caseStudy, index) => (
-            <div className="case-card" data-aos="fade-up" key={index}>
+            <div className="case-card" key={index}>
               <div className="case-header">
                 <div className="case-image">
                   <div className="case-overlay">
@@ -98,6 +99,14 @@ const CaseStudies = () => {
               </div>
             </div>
           ))}
+        </div>
+        
+        <div className="cases-cta">
+          <h3>Want to see more case studies?</h3>
+          <p>Explore our complete portfolio of successful AI implementations</p>
+          <Link to="/portfolio" className="btn btn-primary">
+            View Full Portfolio
+          </Link>
         </div>
       </div>
     </section>

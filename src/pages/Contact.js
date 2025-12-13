@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { pageVariants, pageTransition, validateForm } from '../utils/animations';
+import { validateForm } from '../utils/animations';
 import ContactForm from '../components/ContactForm';
 import ContactInfo from '../components/ContactInfo';
 
@@ -81,32 +80,15 @@ const Contact = () => {
   };
 
   return (
-    <motion.div
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={pageTransition}
-      className="contact-page"
-    >
+    <div className="contact-page page-transition">
       <div className="page-header">
         <div className="container">
-          <motion.h1 
-            className="page-title"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-          >
+          <h1 className="page-title">
             Get in Touch
-          </motion.h1>
-          <motion.p 
-            className="page-subtitle"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-          >
+          </h1>
+          <p className="page-subtitle">
             Ready to transform your business with AI? Let's start the conversation.
-          </motion.p>
+          </p>
         </div>
       </div>
 
@@ -123,7 +105,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
