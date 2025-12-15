@@ -7,15 +7,15 @@
 
 :root {
     /* Colors */
-    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+    --primary-gradient: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    --secondary-gradient: linear-gradient(135deg, #2979ff 0%, #1565c0 100%);
+    --accent-gradient: linear-gradient(135deg, #4ade80 0%, #00e5ff 100%);
+    --dark-gradient: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
     
-    --primary-color: #667eea;
-    --secondary-color: #764ba2;
-    --accent-color: #00f2fe;
-    --success-color: #00e676;
+    --primary-color: #4ade80;
+    --secondary-color: #2979ff;
+    --accent-color: #22c55e;
+    --success-color: #4ade80;
     --warning-color: #ffab00;
     --error-color: #ff5252;
     
@@ -23,14 +23,14 @@
     --text-secondary: #b0b3b8;
     --text-muted: #6b7280;
     
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #111111;
-    --bg-tertiary: #1a1a1a;
-    --bg-card: rgba(255, 255, 255, 0.05);
-    --bg-glass: rgba(255, 255, 255, 0.1);
+    --bg-primary: #000000;
+    --bg-secondary: #1a1a1a;
+    --bg-tertiary: #2a2a2a;
+    --bg-card: rgba(255, 255, 255, 0.08);
+    --bg-glass: rgba(255, 255, 255, 0.12);
     
-    --border-color: rgba(255, 255, 255, 0.1);
-    --border-hover: rgba(102, 126, 234, 0.5);
+    --border-color: rgba(255, 255, 255, 0.15);
+    --border-hover: rgba(74, 222, 128, 0.6);
     
     /* Typography */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -56,8 +56,8 @@
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    --shadow-neon: 0 0 20px rgba(102, 126, 234, 0.5);
-    --shadow-glow: 0 0 40px rgba(0, 242, 254, 0.3);
+    --shadow-neon: 0 0 20px rgba(74, 222, 128, 0.5);
+    --shadow-glow: 0 0 40px rgba(34, 197, 94, 0.3);
 }
 
 body {
@@ -180,7 +180,7 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(10, 10, 10, 0.95);
+    background: #000000;
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-color);
     transition: all 0.3s ease;
@@ -202,6 +202,18 @@ body {
     gap: var(--space-md);
     text-decoration: none;
     color: inherit;
+}
+
+.logo-image {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+}
+
+.nav-logo:hover .logo-image {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
 }
 
 .logo-symbol {
@@ -714,40 +726,67 @@ body {
     align-items: start;
 }
 
-.about-text h2 {
+.about-section {
+    margin-bottom: var(--space-2xl);
+    padding: var(--space-xl);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.about-section:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-neon);
+}
+
+.about-section h2 {
     font-size: 1.5rem;
     font-weight: 700;
-    margin: var(--space-xl) 0 var(--space-md);
+    margin-bottom: var(--space-md);
     color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
 }
 
-.about-text h2:first-child {
-    margin-top: 0;
-}
-
-.about-text p {
+.about-section p {
     color: var(--text-secondary);
-    margin-bottom: var(--space-lg);
     line-height: 1.7;
+    margin: 0;
 }
 
-.about-text ul {
+.values-list {
     list-style: none;
-    margin: var(--space-lg) 0;
+    margin: var(--space-lg) 0 0 0;
+    padding: 0;
 }
 
-.about-text li {
+.values-list li {
     color: var(--text-secondary);
-    padding: var(--space-sm) 0;
+    padding: var(--space-md) 0;
     border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
 }
 
-.about-text li:last-child {
+.values-list li:last-child {
     border-bottom: none;
 }
 
-.about-text li strong {
+.values-list li strong {
     color: var(--text-primary);
+    flex-shrink: 0;
+}
+
+.values-list li::before {
+    content: '→';
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-top: 2px;
 }
 
 .about-stats {

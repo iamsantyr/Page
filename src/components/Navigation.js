@@ -24,7 +24,7 @@ const Navigation = () => {
     <nav className="navbar" id="navbar">
       <div className="nav-container">
         <Link to="/" className="nav-logo">
-          <div className="logo-symbol">DC</div>
+          <img src="/logo.png" alt="DualCore Intelligence Labs" className="logo-image" />
           <div className="logo-text">
             <span className="main-text">DualCore</span>
             <span className="sub-text">Intelligence Labs</span>

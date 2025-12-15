@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { validateForm } from '../utils/animations';
+
+// Components
 import ContactForm from '../components/ContactForm';
 import ContactInfo from '../components/ContactInfo';
 
@@ -80,14 +82,13 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact-page page-transition">
+    <div className="contact-page">
       <div className="page-header">
         <div className="container">
-          <h1 className="page-title">
-            Get in Touch
-          </h1>
+          <h1 className="page-title">Contacto</h1>
           <p className="page-subtitle">
-            Ready to transform your business with AI? Let's start the conversation.
+            Contacta con nosotros para discutir tus proyectos y objetivos empresariales. 
+            Nuestro equipo de expertos está listo para ayudarte a alcanzar el éxito.
           </p>
         </div>
       </div>
@@ -95,13 +96,17 @@ const Contact = () => {
       <div className="contact-page-content">
         <div className="container">
           <div className="contact-layout">
-            <ContactForm 
-              formData={formData}
-              formStatus={formStatus}
-              onInputChange={handleInputChange}
-              onSubmit={handleSubmit}
-            />
-            <ContactInfo />
+            <div className="contact-form-container">
+              <ContactForm 
+                formData={formData}
+                formStatus={formStatus}
+                onInputChange={handleInputChange}
+                onSubmit={handleSubmit}
+              />
+            </div>
+            <div className="contact-info-container">
+              <ContactInfo />
+            </div>
           </div>
         </div>
       </div>

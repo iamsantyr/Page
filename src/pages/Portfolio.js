@@ -1,110 +1,115 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
   const projects = [
     {
-      title: 'E-Commerce AI Recommendation Engine',
+      title: 'Motor de Recomendaciones IA para E-Commerce',
       company: 'RetailCorp',
-      description: 'Implemented a sophisticated recommendation system that increased sales by 35% and improved customer engagement.',
+      description: 'Implementamos un sistema de recomendación sofisticado que aumentó las ventas en 35% y mejoró el engagement.',
       technologies: ['Python', 'TensorFlow', 'AWS', 'React'],
       results: [
-        '35% increase in sales',
-        '50% improvement in click-through rates',
-        'Real-time personalization',
-        'Reduced cart abandonment by 25%'
+        '35% aumento en ventas',
+        '50% mejora en CTR',
+        'Personalización en tiempo real',
+        '25% reducción en abandono de carrito'
       ],
       category: 'Machine Learning'
     },
     {
-      title: 'Intelligent Document Processing',
+      title: 'Procesamiento Inteligente de Documentos',
       company: 'LegalTech Solutions',
-      description: 'Automated document analysis and extraction system that reduced processing time by 80%.',
+      description: 'Sistema automatizado de análisis y extracción de documentos que redujo el tiempo de procesamiento en 80%.',
       technologies: ['PyTorch', 'OpenCV', 'FastAPI', 'Docker'],
       results: [
-        '80% reduction in processing time',
-        '99.2% accuracy in text extraction',
-        'Automated classification',
-        'Cost savings of $2M annually'
+        '80% reducción en tiempo de procesamiento',
+        '99.2% precisión en extracción',
+        'Clasificación automatizada',
+        'Ahorro de $2M anuales'
       ],
       category: 'Computer Vision'
     },
     {
-      title: 'AI-Powered Customer Support',
+      title: 'Soporte al Cliente con IA',
       company: 'TechSupport Inc',
-      description: 'Intelligent chatbot system that handles 70% of customer inquiries automatically.',
+      description: 'Sistema de chatbot inteligente que maneja automáticamente el 70% de consultas de clientes.',
       technologies: ['GPT-4', 'Azure OpenAI', 'Node.js', 'MongoDB'],
       results: [
-        '70% automated query resolution',
-        '24/7 availability',
-        '90% customer satisfaction',
-        '60% reduction in support costs'
+        '70% resolución automatizada',
+        'Disponibilidad 24/7',
+        '90% satisfacción del cliente',
+        '60% reducción en costos de soporte'
       ],
       category: 'Natural Language Processing'
     },
     {
-      title: 'Predictive Maintenance System',
+      title: 'Sistema de Mantenimiento Predictivo',
       company: 'ManufacturingPlus',
-      description: 'IoT-based predictive maintenance system that prevents equipment failures.',
+      description: 'Sistema IoT de mantenimiento predictivo que previene fallas de equipos.',
       technologies: ['Python', 'scikit-learn', 'IoT', 'InfluxDB'],
       results: [
-        '90% reduction in unplanned downtime',
-        '25% maintenance cost savings',
-        'Early fault detection',
-        'Improved equipment lifespan'
+        '90% reducción en downtime no planificado',
+        '25% ahorro en costos de mantenimiento',
+        'Detección temprana de fallas',
+        'Mayor vida útil de equipos'
       ],
       category: 'IoT & ML'
     },
     {
-      title: 'Financial Fraud Detection',
+      title: 'Detección de Fraude Financiero',
       company: 'SecureBank',
-      description: 'Real-time fraud detection system with 99.8% accuracy and minimal false positives.',
+      description: 'Sistema de detección de fraude en tiempo real con 99.8% de precisión.',
       technologies: ['Python', 'XGBoost', 'Apache Kafka', 'PostgreSQL'],
       results: [
-        '99.8% detection accuracy',
-        'Real-time processing',
-        '60% reduction in false positives',
-        'Protected $50M in transactions'
+        '99.8% precisión de detección',
+        'Procesamiento en tiempo real',
+        '60% reducción en falsos positivos',
+        'Protegió $50M en transacciones'
       ],
       category: 'Machine Learning'
     },
     {
-      title: 'Medical Image Analysis',
+      title: 'Análisis de Imágenes Médicas',
       company: 'HealthAI Diagnostics',
-      description: 'AI system for automated medical image analysis and early disease detection.',
+      description: 'Sistema de IA para análisis automatizado de imágenes médicas y detección temprana de enfermedades.',
       technologies: ['PyTorch', 'DICOM', 'Flask', 'Docker'],
       results: [
-        '95% diagnostic accuracy',
-        '70% faster diagnosis',
-        'Early detection capabilities',
-        'Improved patient outcomes'
+        '95% precisión diagnóstica',
+        '70% diagnóstico más rápido',
+        'Capacidades de detección temprana',
+        'Mejores resultados para pacientes'
       ],
       category: 'Computer Vision'
     }
   ];
 
-  const categories = ['All', 'Machine Learning', 'Computer Vision', 'Natural Language Processing', 'IoT & ML'];
+  const categories = ['Todos', 'Machine Learning', 'Computer Vision', 'Natural Language Processing', 'IoT & ML'];
+
+  const filteredProjects = selectedCategory === 'Todos' 
+    ? projects 
+    : projects.filter(project => project.category === selectedCategory);
 
   return (
-    <div className="portfolio-page page-transition">
+    <div className="portfolio-page">
       <div className="page-header">
         <div className="container">
-          <h1 className="page-title">
-            Our Portfolio
-          </h1>
+          <h1 className="page-title">Nuestro Portafolio</h1>
           <p className="page-subtitle">
-            Showcasing successful AI implementations across industries
+            Casos de éxito que demuestran nuestra experiencia en implementaciones de IA exitosas en diversas industrias.
           </p>
         </div>
       </div>
 
       <div className="portfolio-content">
         <div className="container">
-          <div className="portfolio-filters">
+          <div className="portfolio-categories">
             {categories.map((category, index) => (
-              <button 
+              <button
                 key={index}
-                className="filter-btn"
+                className={`category-btn ${selectedCategory === category ? 'active' : ''}`}
+                onClick={() => setSelectedCategory(category)}
               >
                 {category}
               </button>
@@ -112,50 +117,48 @@ const Portfolio = () => {
           </div>
 
           <div className="portfolio-grid">
-            {projects.map((project, index) => (
-              <div 
-                key={index}
-                className="portfolio-card"
-              >
+            {filteredProjects.map((project, index) => (
+              <div key={index} className="portfolio-card">
                 <div className="portfolio-image">
-                  <div className="placeholder-image">
-                    <span>📊</span>
-                  </div>
                   <div className="portfolio-overlay">
-                    <span className="category-tag">{project.category}</span>
+                    <div className="overlay-content">
+                      <h4>{project.category}</h4>
+                      <p>Proyecto #{index + 1}</p>
+                    </div>
                   </div>
                 </div>
-                
                 <div className="portfolio-content">
-                  <h3>{project.title}</h3>
-                  <p className="company">{project.company}</p>
-                  <p className="description">{project.description}</p>
-                  
-                  <div className="portfolio-results">
-                    <h4>Key Results:</h4>
-                    <ul>
-                      {project.results.slice(0, 2).map((result, resultIndex) => (
-                        <li key={resultIndex}>{result}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="portfolio-tech">
+                  <h3 className="portfolio-title">{project.title}</h3>
+                  <p className="portfolio-company">Cliente: {project.company}</p>
+                  <p className="portfolio-description">{project.description}</p>
+                  <div className="portfolio-tags">
                     {project.technologies.map((tech, techIndex) => (
-                      <span key={techIndex} className="tech-badge">{tech}</span>
+                      <span key={techIndex} className="portfolio-tag">{tech}</span>
                     ))}
                   </div>
+                  <Link to="/contact" className="portfolio-link">
+                    Ver Detalles →
+                  </Link>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="portfolio-cta">
-            <h2>Ready to start your AI project?</h2>
-            <p>Let's discuss how we can help transform your business</p>
-            <Link to="/contact" className="btn btn-primary btn-large">
-              Get Started
-            </Link>
+          <div className="portfolio-cta-section">
+            <div className="cta-content">
+              <h2>¿Listo para Crear su Historia de Éxito?</h2>
+              <p>
+                Discutamos cómo podemos ayudar a transformar su negocio con soluciones de IA de vanguardia.
+              </p>
+              <div className="cta-buttons">
+                <Link to="/contact" className="btn btn-primary btn-large">
+                  Iniciar Proyecto
+                </Link>
+                <Link to="/services" className="btn btn-secondary btn-large">
+                  Ver Servicios
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

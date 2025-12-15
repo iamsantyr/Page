@@ -1,15 +1,18 @@
 import React from 'react';
 
+// Components
+import Team from '../components/Team';
+import Expertise from '../components/Expertise';
+
 const About = () => {
   return (
-    <div className="about-page page-transition">
+    <div className="about-page">
       <div className="page-header">
         <div className="container">
-          <h1 className="page-title">
-            About DualCore
-          </h1>
+          <h1 className="page-title">Sobre Nosotros</h1>
           <p className="page-subtitle">
-            Pioneering the future of artificial intelligence
+            Conoce la historia, misión y visión de DualCore Intelligence Labs. 
+            Somos un equipo apasionado de expertos en inteligencia artificial y tecnología.
           </p>
         </div>
       </div>
@@ -18,51 +21,78 @@ const About = () => {
         <div className="container">
           <div className="about-grid">
             <div className="about-text">
-              <h2>Our Mission</h2>
-              <p>
-                At DualCore Intelligence Labs, we believe that artificial intelligence 
-                should be accessible, practical, and transformative. Our mission is to 
-                bridge the gap between cutting-edge AI research and real-world business applications.
-              </p>
-              
-              <h2>Our Vision</h2>
-              <p>
-                We envision a future where AI seamlessly integrates with human workflows, 
-                enhancing productivity and creativity rather than replacing human potential. 
-                Through innovative solutions and expert guidance, we help organizations 
-                navigate their AI transformation journey.
-              </p>
+              <div className="about-section">
+                <h2>Nuestra Historia</h2>
+                <p>
+                  DualCore Intelligence Labs nació de la visión de revolucionar la manera en que las empresas 
+                  interactúan con la tecnología. Fundada por un equipo de expertos en inteligencia artificial, 
+                  nos especializamos en crear soluciones innovadoras que impulsan el crecimiento empresarial.
+                </p>
+              </div>
 
-              <h2>Our Values</h2>
-              <ul>
-                <li><strong>Innovation:</strong> Pushing the boundaries of what's possible</li>
-                <li><strong>Integrity:</strong> Ethical AI development and deployment</li>
-                <li><strong>Collaboration:</strong> Working together to achieve extraordinary results</li>
-                <li><strong>Excellence:</strong> Delivering high-quality solutions that exceed expectations</li>
-              </ul>
+              <div className="about-section">
+                <h2>Nuestra Misión</h2>
+                <p>
+                  Democratizar el acceso a la inteligencia artificial avanzada, proporcionando soluciones 
+                  tecnológicas de clase mundial que permitan a las empresas competir en la era digital.
+                </p>
+              </div>
+
+              <div className="about-section">
+                <h2>Nuestros Valores</h2>
+                <ul className="values-list">
+                  <li>
+                    <strong>Innovación:</strong> Siempre buscamos la vanguardia tecnológica
+                  </li>
+                  <li>
+                    <strong>Excelencia:</strong> Nos comprometemos con la máxima calidad en cada proyecto
+                  </li>
+                  <li>
+                    <strong>Transparencia:</strong> Mantenemos comunicación clara y honesta
+                  </li>
+                  <li>
+                    <strong>Colaboración:</strong> Creemos en el poder del trabajo en equipo
+                  </li>
+                </ul>
+              </div>
+
+              <div className="about-section">
+                <h2>Nuestra Visión</h2>
+                <p>
+                  Ser el laboratorio de inteligencia artificial de referencia en América Latina, 
+                  reconocidos por nuestra capacidad de transformar ideas complejas en soluciones simples y efectivas.
+                </p>
+              </div>
             </div>
 
             <div className="about-stats">
               <div className="stat-card">
+                <div className="stat-icon">📅</div>
                 <h3>5+</h3>
-                <p>Years of Experience</p>
+                <p>Años de Experiencia</p>
               </div>
               <div className="stat-card">
+                <div className="stat-icon">🚀</div>
                 <h3>50+</h3>
-                <p>AI Models Deployed</p>
+                <p>Proyectos Completados</p>
               </div>
               <div className="stat-card">
-                <h3>100+</h3>
-                <p>Successful Projects</p>
+                <div className="stat-icon">👥</div>
+                <h3>25+</h3>
+                <p>Clientes Satisfechos</p>
               </div>
               <div className="stat-card">
+                <div className="stat-icon">🕐</div>
                 <h3>24/7</h3>
-                <p>Support Available</p>
+                <p>Soporte Técnico</p>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <Expertise />
+      <Team />
     </div>
   );
 };

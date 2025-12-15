@@ -4,82 +4,80 @@ import { Link } from 'react-router-dom';
 const Services = () => {
   const services = [
     {
-      title: 'AI Strategy Consulting',
-      description: 'Comprehensive AI readiness assessments and strategic roadmaps for your organization.',
+      title: 'Consultoría en IA',
+      description: 'Evaluaciones integrales de preparación para IA y hojas de ruta estratégicas.',
       features: [
-        'AI readiness assessment',
-        'Strategic planning',
-        'ROI analysis',
-        'Risk evaluation'
+        'Evaluación de preparación para IA',
+        'Planificación estratégica',
+        'Análisis de ROI',
+        'Evaluación de riesgos'
       ],
       icon: '🎯'
     },
     {
-      title: 'Machine Learning Development',
-      description: 'Custom ML models tailored to your specific business needs and data requirements.',
+      title: 'Desarrollo de Machine Learning',
+      description: 'Modelos ML personalizados adaptados a sus necesidades empresariales específicas.',
       features: [
-        'Custom model development',
-        'Data pipeline design',
-        'Model training & optimization',
-        'Performance monitoring'
+        'Desarrollo de modelos personalizados',
+        'Diseño de pipelines de datos',
+        'Entrenamiento y optimización',
+        'Monitoreo de rendimiento'
       ],
       icon: '🤖'
     },
     {
-      title: 'Natural Language Processing',
-      description: 'Advanced NLP solutions for text analysis, chatbots, and language understanding.',
+      title: 'Procesamiento de Lenguaje Natural',
+      description: 'Soluciones NLP avanzadas para análisis de texto y chatbots.',
       features: [
-        'Sentiment analysis',
-        'Text classification',
-        'Chatbot development',
-        'Language translation'
+        'Análisis de sentimientos',
+        'Clasificación de texto',
+        'Desarrollo de chatbots',
+        'Traducción de idiomas'
       ],
       icon: '💬'
     },
     {
-      title: 'Computer Vision',
-      description: 'Image and video analysis solutions for automation and insights.',
+      title: 'Visión por Computadora',
+      description: 'Soluciones de análisis de imágenes y video para automatización.',
       features: [
-        'Image recognition',
-        'Object detection',
-        'Video analysis',
-        'OCR solutions'
+        'Reconocimiento de imágenes',
+        'Detección de objetos',
+        'Análisis de video',
+        'Soluciones OCR'
       ],
       icon: '👁️'
     },
     {
-      title: 'AI Integration',
-      description: 'Seamless integration of AI solutions into your existing systems and workflows.',
+      title: 'Integración de IA',
+      description: 'Integración perfecta de soluciones de IA en sistemas existentes.',
       features: [
-        'System integration',
-        'API development',
-        'Legacy system modernization',
-        'Cloud deployment'
+        'Integración de sistemas',
+        'Desarrollo de APIs',
+        'Modernización de sistemas',
+        'Despliegue en la nube'
       ],
       icon: '🔗'
     },
     {
-      title: 'AI Training & Support',
-      description: 'Comprehensive training programs and ongoing support for your team.',
+      title: 'Capacitación y Soporte',
+      description: 'Programas de capacitación integral y soporte continuo.',
       features: [
-        'Team training',
-        'Documentation',
-        'Ongoing support',
-        'Maintenance'
+        'Capacitación de equipos',
+        'Documentación',
+        'Soporte continuo',
+        'Mantenimiento'
       ],
       icon: '📚'
     }
   ];
 
   return (
-    <div className="services-page page-transition">
+    <div className="services-page">
       <div className="page-header">
         <div className="container">
-          <h1 className="page-title">
-            Our Services
-          </h1>
+          <h1 className="page-title">Nuestros Servicios</h1>
           <p className="page-subtitle">
-            Comprehensive AI solutions tailored to your business needs
+            Soluciones integrales de inteligencia artificial adaptadas a sus necesidades empresariales específicas.
           </p>
         </div>
       </div>
@@ -88,28 +86,44 @@ const Services = () => {
         <div className="container">
           <div className="services-grid">
             {services.map((service, index) => (
-              <div 
-                key={index}
-                className="service-card"
-              >
-                <div className="service-icon">{service.icon}</div>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
+              <div key={index} className="service-card">
+                <div className="service-header">
+                  <div className="service-icon">{service.icon}</div>
+                  <div className="service-info">
+                    <h3>{service.title}</h3>
+                    <span className="service-category">IA Solutions</span>
+                  </div>
+                </div>
+                <p className="service-description">{service.description}</p>
                 <ul className="service-features">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex}>{feature}</li>
                   ))}
                 </ul>
+                <div className="service-cta">
+                  <Link to="/contact" className="btn btn-primary">
+                    Más Información
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
 
-          <div className="services-cta">
-            <h2>Ready to get started?</h2>
-            <p>Let's discuss how AI can transform your business</p>
-            <Link to="/contact" className="btn btn-primary btn-large">
-              Start Your Project
-            </Link>
+          <div className="services-cta-section">
+            <div className="cta-content">
+              <h2>¿Listo para Transformar su Negocio?</h2>
+              <p>
+                Discutamos cómo nuestras soluciones de IA pueden impulsar la innovación y el crecimiento de su organización.
+              </p>
+              <div className="cta-buttons">
+                <Link to="/contact" className="btn btn-primary btn-large">
+                  Iniciar Proyecto
+                </Link>
+                <Link to="/portfolio" className="btn btn-secondary btn-large">
+                  Ver Nuestro Trabajo
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
