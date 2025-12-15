@@ -12,7 +12,7 @@ import ContactPreview from '../components/ContactPreview';
 
 const Home = () => {
   return (
-    <div className="page-transition">
+    <div className="home-page">
       <HeroSection />
       <ProofPoints />
       <Expertise />
